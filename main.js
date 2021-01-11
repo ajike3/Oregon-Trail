@@ -2,7 +2,7 @@
 class Traveler {
     constructor (name) {
         this.name = name;
-        this.food = 5;
+        this.food = 1;
         this.isHealthy = true;
     }
 
@@ -10,12 +10,14 @@ class Traveler {
         this.food += 2;
     }
     eat () {
-        this.food -= 1;
-        if(this.food ==0)
+        if(this.food ==0){      
             this.isHealthy = false; 
-    }  
-
-    } 
+        }   
+            else{
+                this.food -=1;
+        }
+    }
+}
 
 
 
@@ -24,7 +26,7 @@ class wagon {
     constructor(c) {
         this.capacity = c;
         this.passenger = [];
-    }
+ }
     
     getAvailableSeatCount(){
         while (this.passenger.length < this.capacity) {
@@ -35,8 +37,14 @@ class wagon {
         
             return this.capacity - this.passenger.length;
     }
-shouldQuarantine();
-    for(let i = 0; i < this.passengers.length; i++){
+    join () {
+        if (this.getAvailableSeatCount()>0){
+            this.passengers.push(passengers)
+        }
+    }
+
+    shouldQuarantine();
+        for(let i = 0; i < this.passengers.length; i++){
         if(this.passengers[i].isHealthy == false) {
             return true;    
         }
@@ -44,14 +52,14 @@ shouldQuarantine();
 
     return false;
 
-totalFood();
-   let total = 0;
-   for(let i =0; i< this.passengers.length; i++) {
-       total += this.passenger[i].foood;
+    totalFood();
+       let total = 0;
+       for(let i =0; i< this.passengers.length; i++) {
+       total += this.passenger[i].food;
        }
-       return total;   
+        return total;   
     
 
       
-} 
+    } 
 }
