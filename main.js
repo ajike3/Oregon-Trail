@@ -1,4 +1,3 @@
-
 class Traveler {
     constructor (name) {
         this.name = name;
@@ -37,10 +36,10 @@ class wagon {
         
             return this.capacity - this.passenger.length;
     }
-    join () {
+    join ();
         if (this.getAvailableSeatCount()>0){
             this.passengers.push(passengers)
-        }
+        
     }
 
     shouldQuarantine();
