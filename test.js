@@ -1,4 +1,4 @@
-let wagon = new Wagon(39);
+let wagon = new Wagon(2);
 // Create three travelers
 let henrietta = new Traveler('Henrietta')
 let juan = new Traveler('Juan')
