@@ -1,5 +1,5 @@
 class Traveler {
-    constructor (name) {
+    constructor(name) {
         this.name = name;
         this.food = 1;
         this.isHealthy = true;
@@ -8,12 +8,13 @@ class Traveler {
     hunt() {
         this.food += 2;
     }
-    eat () {
-        if(this.food ==0){      
+
+    eat() {
+        if(this.food === 0){      
             this.isHealthy = false; 
         }   
-            else{
-                this.food -=1;
+        else{
+            this.food -= 1;
         }
     }
 }
@@ -21,44 +22,36 @@ class Traveler {
 
 
 // create an instance of the Wagon class
-class wagon {
+class Wagon {
     constructor(c) {
         this.capacity = c;
-        this.passenger = [];
- }
+        this.passengers = [];
+    }
     
     getAvailableSeatCount(){
-        while (this.passenger.length < this.capacity) {
-            this.passengers.push(Traveler);
+        return this.capacity - this.passengers.length;
+    } 
+
+    join(traveler){
+        if (this.getAvailableSeatCount() > 0){
+            this.passengers.push(traveler);
         }
-        if (this.passenger.length < this.capacity) {
-            this.passengers.push(Traveler);
-        
-            return this.capacity - this.passenger.length;
-    }
-    join ();
-        if (this.getAvailableSeatCount()>0){
-            this.passengers.push(passengers)
-        
     }
 
-    shouldQuarantine();
+    shouldQuarantine(){
         for(let i = 0; i < this.passengers.length; i++){
-        if(this.passengers[i].isHealthy == false) {
-            return true;    
+            if(this.passengers[i].isHealthy === false) {
+                return true;    
+            }
         }
+        return false;
     }
 
-    return false;
-
-    totalFood();
+    totalFood(){
        let total = 0;
-       for(let i =0; i< this.passengers.length; i++) {
-       total += this.passenger[i].food;
-       }
+       for(let i = 0; i < this.passengers.length; i++) {
+       total += this.passengers[i].food;
+        }
         return total;   
-    
-
-      
     } 
 }
